@@ -1,0 +1,160 @@
+{
+  "application_credentials": {
+    "description": "Lege unter {dashboard_url} eine App mit allen read-Scopes plus offline an und trage als Redirect URI {redirect_url} ein. Dann hier Client ID und Client Secret eingeben."
+  },
+  "config": {
+    "step": {
+      "pick_implementation": {
+        "title": "Anmeldemethode wählen"
+      },
+      "reauth_confirm": {
+        "title": "Erneut bei WHOOP anmelden",
+        "description": "Die WHOOP-Anmeldung ist abgelaufen. Melde dich neu an, damit die Daten weiter kommen."
+      }
+    },
+    "abort": {
+      "already_configured": "Dieses WHOOP-Konto ist schon eingerichtet.",
+      "wrong_account": "Du hast dich mit einem anderen WHOOP-Konto angemeldet.",
+      "cannot_connect": "WHOOP ist nicht erreichbar.",
+      "reauth_successful": "Neu angemeldet.",
+      "missing_credentials": "Bitte zuerst WHOOP-Anwendungs-Anmeldedaten hinzufügen.",
+      "authorize_url_timeout": "Zeitüberschreitung beim Erzeugen der Login-Adresse.",
+      "no_url_available": "Keine Adresse verfügbar.",
+      "oauth_error": "Ungültige Token-Daten erhalten.",
+      "oauth_timeout": "Zeitüberschreitung beim Abrufen des Tokens.",
+      "oauth_failed": "Fehler beim Abrufen des Zugriffstokens.",
+      "oauth_unauthorized": "Autorisierungsfehler beim Abrufen des Zugriffstokens.",
+      "user_rejected_authorize": "Anmeldung wurde abgelehnt."
+    },
+    "create_entry": {
+      "default": "Mit WHOOP verbunden."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Weckzeiten",
+        "description": "Für die empfohlene Schlafenszeit. Eine Entität (z. B. Weckzeit) hat Vorrang, wenn sie in der Zukunft liegt.",
+        "data": {
+          "wake_weekday": "Wochentags",
+          "wake_weekend": "Wochenende",
+          "wake_entity": "Weckzeit-Entität (optional)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "recovery": {
+        "name": "Erholung"
+      },
+      "recovery_zone": {
+        "name": "Erholungszone",
+        "state": {
+          "green": "Grün",
+          "yellow": "Gelb",
+          "red": "Rot"
+        }
+      },
+      "resting_heart_rate": {
+        "name": "Ruhepuls"
+      },
+      "hrv": {
+        "name": "Herzfrequenzvariabilität"
+      },
+      "spo2": {
+        "name": "Blutsauerstoff"
+      },
+      "skin_temperature": {
+        "name": "Hauttemperatur"
+      },
+      "sleep_performance": {
+        "name": "Schlafleistung"
+      },
+      "sleep_consistency": {
+        "name": "Schlafregelmäßigkeit"
+      },
+      "sleep_efficiency": {
+        "name": "Schlafeffizienz"
+      },
+      "respiratory_rate": {
+        "name": "Atemfrequenz"
+      },
+      "sleep_duration": {
+        "name": "Schlafdauer"
+      },
+      "time_in_bed": {
+        "name": "Zeit im Bett"
+      },
+      "deep_sleep": {
+        "name": "Tiefschlaf"
+      },
+      "rem_sleep": {
+        "name": "REM-Schlaf"
+      },
+      "light_sleep": {
+        "name": "Leichtschlaf"
+      },
+      "awake_time": {
+        "name": "Wachzeit"
+      },
+      "sleep_cycles": {
+        "name": "Schlafzyklen"
+      },
+      "disturbances": {
+        "name": "Störungen"
+      },
+      "sleep_start": {
+        "name": "Eingeschlafen"
+      },
+      "sleep_end": {
+        "name": "Aufgewacht"
+      },
+      "sleep_need_last": {
+        "name": "Schlafbedarf letzte Nacht"
+      },
+      "sleep_need_tonight": {
+        "name": "Schlafbedarf heute Nacht"
+      },
+      "bedtime": {
+        "name": "Empfohlene Schlafenszeit"
+      },
+      "strain": {
+        "name": "Tagesbelastung"
+      },
+      "calories": {
+        "name": "Kalorien heute"
+      },
+      "average_heart_rate": {
+        "name": "Durchschnittspuls heute"
+      },
+      "max_heart_rate_today": {
+        "name": "Maximalpuls heute"
+      },
+      "last_workout": {
+        "name": "Letztes Workout"
+      },
+      "last_workout_strain": {
+        "name": "Belastung letztes Workout"
+      },
+      "last_workout_calories": {
+        "name": "Kalorien letztes Workout"
+      },
+      "last_workout_duration": {
+        "name": "Dauer letztes Workout"
+      },
+      "workouts_today": {
+        "name": "Workouts heute"
+      },
+      "weight": {
+        "name": "Gewicht"
+      },
+      "max_heart_rate": {
+        "name": "Maximalpuls"
+      },
+      "height": {
+        "name": "Größe"
+      }
+    }
+  }
+}

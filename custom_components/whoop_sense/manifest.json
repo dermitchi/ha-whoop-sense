@@ -1,0 +1,13 @@
+{
+  "domain": "whoop_sense",
+  "name": "WHOOP Sense",
+  "codeowners": ["@dermitchi"],
+  "config_flow": true,
+  "dependencies": ["application_credentials"],
+  "documentation": "https://github.com/dermitchi/ha-whoop-sense",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/dermitchi/ha-whoop-sense/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

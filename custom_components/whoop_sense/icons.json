@@ -1,0 +1,111 @@
+{
+  "entity": {
+    "sensor": {
+      "recovery": {
+        "default": "mdi:battery-heart-variant"
+      },
+      "recovery_zone": {
+        "default": "mdi:traffic-light"
+      },
+      "resting_heart_rate": {
+        "default": "mdi:heart-pulse"
+      },
+      "hrv": {
+        "default": "mdi:heart-flash"
+      },
+      "spo2": {
+        "default": "mdi:water-percent"
+      },
+      "skin_temperature": {
+        "default": "mdi:thermometer"
+      },
+      "sleep_performance": {
+        "default": "mdi:sleep"
+      },
+      "sleep_consistency": {
+        "default": "mdi:calendar-sync"
+      },
+      "sleep_efficiency": {
+        "default": "mdi:bed-clock"
+      },
+      "respiratory_rate": {
+        "default": "mdi:lungs"
+      },
+      "sleep_duration": {
+        "default": "mdi:sleep"
+      },
+      "time_in_bed": {
+        "default": "mdi:bed"
+      },
+      "deep_sleep": {
+        "default": "mdi:power-sleep"
+      },
+      "rem_sleep": {
+        "default": "mdi:eye-refresh"
+      },
+      "light_sleep": {
+        "default": "mdi:weather-night"
+      },
+      "awake_time": {
+        "default": "mdi:eye"
+      },
+      "sleep_cycles": {
+        "default": "mdi:sync"
+      },
+      "disturbances": {
+        "default": "mdi:alert-circle-outline"
+      },
+      "sleep_start": {
+        "default": "mdi:bed-clock"
+      },
+      "sleep_end": {
+        "default": "mdi:alarm"
+      },
+      "sleep_need_last": {
+        "default": "mdi:timer-sand"
+      },
+      "sleep_need_tonight": {
+        "default": "mdi:timer-sand-complete"
+      },
+      "bedtime": {
+        "default": "mdi:bed-clock"
+      },
+      "strain": {
+        "default": "mdi:lightning-bolt"
+      },
+      "calories": {
+        "default": "mdi:fire"
+      },
+      "average_heart_rate": {
+        "default": "mdi:heart"
+      },
+      "max_heart_rate_today": {
+        "default": "mdi:heart-plus"
+      },
+      "last_workout": {
+        "default": "mdi:run"
+      },
+      "last_workout_strain": {
+        "default": "mdi:lightning-bolt-outline"
+      },
+      "last_workout_calories": {
+        "default": "mdi:fire"
+      },
+      "last_workout_duration": {
+        "default": "mdi:timer-outline"
+      },
+      "workouts_today": {
+        "default": "mdi:dumbbell"
+      },
+      "weight": {
+        "default": "mdi:scale-bathroom"
+      },
+      "max_heart_rate": {
+        "default": "mdi:heart-plus-outline"
+      },
+      "height": {
+        "default": "mdi:human-male-height"
+      }
+    }
+  }
+}

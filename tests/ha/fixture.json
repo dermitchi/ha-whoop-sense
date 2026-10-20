@@ -1,0 +1,18 @@
+{
+  "recoveries": [{"cycle_id": 1, "sleep_id": "s1", "score_state": "SCORED", "updated_at": "2026-10-20T05:00:00Z",
+    "score": {"user_calibrating": false, "recovery_score": 44, "resting_heart_rate": 58, "hrv_rmssd_milli": 61.2,
+              "spo2_percentage": 96.7, "skin_temp_celsius": 33.4}}],
+  "sleeps": [{"id": "s1", "nap": false, "start": "2026-10-19T21:30:00Z", "end": "2026-10-20T04:45:00Z", "score_state": "SCORED",
+    "score": {"stage_summary": {"total_in_bed_time_milli": 26100000, "total_awake_time_milli": 1800000,
+       "total_light_sleep_time_milli": 12000000, "total_slow_wave_sleep_time_milli": 5400000, "total_rem_sleep_time_milli": 6200000,
+       "sleep_cycle_count": 4, "disturbance_count": 9},
+      "sleep_needed": {"baseline_milli": 27000000, "need_from_sleep_debt_milli": 1800000, "need_from_recent_strain_milli": 600000, "need_from_recent_nap_milli": 0},
+      "respiratory_rate": 15.2, "sleep_performance_percentage": 78, "sleep_consistency_percentage": 70, "sleep_efficiency_percentage": 91.5}}],
+  "cycles": [{"id": 1, "start": "2026-10-20T04:45:00Z", "end": null, "score_state": "SCORED",
+    "score": {"strain": 9.8, "kilojoule": 8368, "average_heart_rate": 70, "max_heart_rate": 160}}],
+  "workouts": [{"id": "w1", "start": "2026-10-20T15:00:00Z", "end": "2026-10-20T16:05:00Z", "sport_name": "running", "score_state": "SCORED",
+    "score": {"strain": 11.2, "kilojoule": 2092, "average_heart_rate": 150, "max_heart_rate": 180, "percent_recorded": 100,
+      "distance_meter": 10234, "zone_durations": {"zone_zero_milli": 0, "zone_one_milli": 600000, "zone_two_milli": 900000,
+      "zone_three_milli": 1200000, "zone_four_milli": 900000, "zone_five_milli": 300000}}}],
+  "body": {"height_meter": 1.8, "weight_kilogram": 72.5, "max_heart_rate": 198}
+}
