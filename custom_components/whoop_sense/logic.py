@@ -54,6 +54,19 @@ def latest_scored(records: list[dict[str, Any]], **match: Any) -> dict[str, Any]
     return None
 
 
+MORNING_START_HOUR = 4
+MORNING_END_HOUR = 12
+
+
+def waiting_for_recovery(recoveries: list[dict[str, Any]], now: datetime) -> bool:
+    """True in the morning window while today's recovery is not scored yet."""
+    if not MORNING_START_HOUR <= now.hour < MORNING_END_HOUR:
+        return False
+    rec = latest_scored(recoveries)
+    created = parse_ts(rec.get("created_at")) if rec else None
+    return created is None or created.astimezone(now.tzinfo).date() != now.date()
+
+
 def _hours(ms: float | None) -> float | None:
     return None if ms is None else round(ms / HOUR_MS, 2)
 

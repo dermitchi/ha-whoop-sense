@@ -7,6 +7,7 @@ import time
 from pathlib import Path
 
 import pytest
+from unittest.mock import patch
 
 from homeassistant.components.application_credentials import (
     ClientCredential,
@@ -120,3 +121,21 @@ async def test_options_change_recomputes_without_api(hass: HomeAssistant, aiocli
     new = hass.states.get(bed.entity_id)
     assert new.attributes["wake_time"] != bed.attributes["wake_time"]
     assert aioclient_mock.call_count == calls
+
+
+async def test_poll_interval_switches(hass: HomeAssistant, aioclient_mock) -> None:
+    from datetime import datetime, timedelta
+
+    from homeassistant.util import dt as dt_util
+
+    _mock_api(aioclient_mock)
+    entry = await _setup(hass)
+    coordinator = entry.runtime_data
+    morning = datetime(2026, 10, 21, 7, 0, tzinfo=dt_util.get_default_time_zone())
+    with patch("custom_components.whoop_sense.coordinator.dt_util.now", return_value=morning):
+        await coordinator.async_refresh()
+    assert coordinator.update_interval == timedelta(minutes=3)  # fixture recovery is from the 20th
+    evening = morning.replace(hour=20)
+    with patch("custom_components.whoop_sense.coordinator.dt_util.now", return_value=evening):
+        await coordinator.async_refresh()
+    assert coordinator.update_interval == timedelta(minutes=15)

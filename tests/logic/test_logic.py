@@ -8,6 +8,7 @@ from logic import (
     recovery_zone,
     summarize,
     tonight_need_ms,
+    waiting_for_recovery,
 )
 
 TZ = timezone(timedelta(hours=2))
@@ -164,3 +165,19 @@ def test_summarize_empty_account():
     now = datetime(2026, 10, 20, 18, 0, tzinfo=TZ)
     v, _ = summarize({}, now, now + timedelta(hours=12))
     assert all(val is None for val in v.values())
+
+
+def test_waiting_for_recovery_only_in_the_morning_until_scored():
+    today = {"score_state": "SCORED", "created_at": "2026-10-21T04:50:00Z", "score": {"recovery_score": 50}}
+    yesterday = {"score_state": "SCORED", "created_at": "2026-10-20T05:00:00Z", "score": {"recovery_score": 50}}
+    pending = {"score_state": "PENDING_SCORE", "created_at": "2026-10-21T04:50:00Z"}
+    at = lambda h, m=0: datetime(2026, 10, 21, h, m, tzinfo=TZ)
+    assert waiting_for_recovery([yesterday], at(6, 10))
+    assert waiting_for_recovery([pending, yesterday], at(7))
+    assert not waiting_for_recovery([today, yesterday], at(7))
+    assert not waiting_for_recovery([yesterday], at(3, 59))
+    assert not waiting_for_recovery([yesterday], at(12))
+    assert waiting_for_recovery([], at(8))
+    # created 01:30 local = 23:30 UTC the day before -> still counts as today
+    late = {"score_state": "SCORED", "created_at": "2026-10-20T23:30:00Z", "score": {"recovery_score": 50}}
+    assert not waiting_for_recovery([late], at(9))

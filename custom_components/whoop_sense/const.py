@@ -5,6 +5,8 @@ from datetime import timedelta
 DOMAIN = "whoop_sense"
 
 UPDATE_INTERVAL = timedelta(minutes=15)
+# Mornings until today's recovery is scored.
+FAST_INTERVAL = timedelta(minutes=3)
 RECOMPUTE_INTERVAL = timedelta(minutes=5)
 BODY_INTERVAL = timedelta(hours=6)
 

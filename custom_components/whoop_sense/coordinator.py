@@ -25,9 +25,10 @@ from .const import (
     DEFAULT_WAKE_WEEKDAY,
     DEFAULT_WAKE_WEEKEND,
     DOMAIN,
+    FAST_INTERVAL,
     UPDATE_INTERVAL,
 )
-from .logic import next_wake, summarize
+from .logic import next_wake, summarize, waiting_for_recovery
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -133,4 +134,6 @@ class WhoopCoordinator(DataUpdateCoordinator[WhoopData]):
         except WhoopError as err:
             raise UpdateFailed(str(err)) from err
         raw["body"] = self._body
+        fast = waiting_for_recovery(raw["recoveries"], dt_util.now())
+        self.update_interval = FAST_INTERVAL if fast else UPDATE_INTERVAL
         return self.compute(raw)
